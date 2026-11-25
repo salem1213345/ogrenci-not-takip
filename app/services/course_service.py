@@ -1,5 +1,7 @@
 """Ders işlemleri (CRUD + arama)."""
 
+from __future__ import annotations
+
 import sqlite3
 
 from app.database import Database

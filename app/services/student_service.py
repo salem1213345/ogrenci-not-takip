@@ -1,5 +1,7 @@
 """Öğrenci işlemleri (CRUD + arama)."""
 
+from __future__ import annotations
+
 import re
 import sqlite3
 
