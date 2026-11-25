@@ -1,0 +1,1 @@
+"""Tkinter arayüz paketi."""

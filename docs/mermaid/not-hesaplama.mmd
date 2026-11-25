@@ -1,0 +1,9 @@
+flowchart LR
+    a["Ham notlar<br/>(puan, ağırlık)"] --> b["Ders ağırlıklı ortalaması<br/>Σ(puan×ağırlık) / Σağırlık"]
+    b --> c["Harf notu ve katsayı<br/>AA ... FF"]
+    c --> d["GNO<br/>Σ(katsayı×kredi) / Σkredi"]
+    b --> e{"Ortalama ≥ 60?"}
+    e -->|"Evet"| f["Ders: Geçti"]
+    e -->|"Hayır"| g["Ders: Kaldı"]
+    c --> h["Karne / PDF / CSV"]
+    d --> h

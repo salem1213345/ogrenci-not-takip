@@ -1,0 +1,32 @@
+erDiagram
+    STUDENTS ||--o{ GRADES : "not alır"
+    COURSES ||--o{ GRADES : "not içerir"
+
+    STUDENTS {
+        INTEGER id PK
+        TEXT student_no UK "benzersiz öğrenci numarası"
+        TEXT first_name
+        TEXT last_name
+        TEXT department
+        TEXT email
+        TEXT created_at
+    }
+
+    COURSES {
+        INTEGER id PK
+        TEXT code UK "benzersiz ders kodu"
+        TEXT name
+        INTEGER credit "1-10"
+        TEXT instructor
+        TEXT semester
+    }
+
+    GRADES {
+        INTEGER id PK
+        INTEGER student_id FK
+        INTEGER course_id FK
+        TEXT exam_type "Vize, Final, Ödev, Proje"
+        REAL score "0-100"
+        REAL weight "ağırlık"
+        TEXT exam_date
+    }

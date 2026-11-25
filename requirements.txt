@@ -1,0 +1,6 @@
+# Çalışma zamanı bağımlılıkları (sabitlenmiş sürümler). Python 3.11 veya üzeri gerekir.
+# Tkinter ve sqlite3 Python ile birlikte gelir.
+fpdf2==2.8.9
+defusedxml==0.7.1
+pillow==13.0.0
+fonttools==4.67.0

@@ -1,0 +1,21 @@
+flowchart LR
+    hoca(("Öğretim Görevlisi"))
+
+    subgraph sistem["Öğrenci Not Takip Sistemi"]
+        uc1["Öğrenci kaydı yönet"]
+        uc2["Ders kaydı yönet"]
+        uc3["Not gir / güncelle / sil"]
+        uc4["Karne ve GNO görüntüle"]
+        uc5["PDF / CSV rapor al"]
+        uc6["Veritabanını yedekle"]
+    end
+
+    hoca --> uc1
+    hoca --> uc2
+    hoca --> uc3
+    hoca --> uc4
+    hoca --> uc5
+    hoca --> uc6
+
+    uc3 -.->|"içerir"| uc4
+    uc4 -.->|"besler"| uc5

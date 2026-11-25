@@ -1,0 +1,39 @@
+flowchart TB
+    subgraph sunum["Sunum Katmanı - Tkinter"]
+        t1["Öğrenciler sekmesi"]
+        t2["Dersler sekmesi"]
+        t3["Notlar sekmesi"]
+        t4["Raporlar sekmesi"]
+    end
+
+    subgraph is["İş Katmanı - app/services"]
+        s1["StudentService"]
+        s2["CourseService"]
+        s3["GradeService"]
+        s4["ReportService"]
+        g["grading.py<br/>saf hesaplama fonksiyonları"]
+        v["validators.py<br/>girdi doğrulama"]
+    end
+
+    db[("SQLite<br/>data/notlar.db")]
+    out["Çıktılar<br/>PDF (fpdf2) · CSV (csv)"]
+    test["pytest · flake8 · pylint"]
+
+    t1 --> s1
+    t2 --> s2
+    t3 --> s3
+    t4 --> s4
+
+    s1 --> db
+    s2 --> db
+    s3 --> db
+    s4 --> db
+
+    s1 --> v
+    s2 --> v
+    s3 --> v
+    s3 --> g
+    s4 --> g
+    s4 --> out
+
+    test -.->|"doğrular"| is

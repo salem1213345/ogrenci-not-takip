@@ -1,0 +1,37 @@
+============================= test session starts =============================
+platform win32 -- Python 3.15.1, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\SNOW BİLGİSAYAR\Documents\Default Project\ogrenci-not-takip
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1, platformdirs-4.14.2, cov-7.1.0
+collected 106 items
+
+tests\test_courses.py ..................                                 [ 16%]
+tests\test_database.py ......                                            [ 22%]
+tests\test_demo_data.py ...                                              [ 25%]
+tests\test_grades.py .......................                             [ 47%]
+tests\test_grading.py ..............................                     [ 75%]
+tests\test_reports.py ........                                           [ 83%]
+tests\test_students.py ..................                                [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.15.1-final-0 _______________
+
+Name                              Stmts   Miss  Cover   Missing
+---------------------------------------------------------------
+app\__init__.py                       2      0   100%
+app\config.py                        12      0   100%
+app\database.py                      48      1    98%   58
+app\demo_data.py                     20      0   100%
+app\errors.py                         3      0   100%
+app\grading.py                       41      2    95%   48, 56
+app\models.py                        53      0   100%
+app\services\__init__.py              5      0   100%
+app\services\course_service.py       47      4    91%   49-50, 79-80
+app\services\grade_service.py        96      4    96%   84-85, 93, 154
+app\services\report_service.py      176      5    97%   53, 70, 174, 323, 351
+app\services\student_service.py      49      0   100%
+app\validators.py                    54      2    96%   31, 40
+---------------------------------------------------------------
+TOTAL                               606     18    97%
+============================= 106 passed in 5.17s =============================

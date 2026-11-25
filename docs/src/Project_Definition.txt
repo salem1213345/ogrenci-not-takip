@@ -1,0 +1,135 @@
+================================================================================
+PROJE TANIM BELGESİ (PROJECT DEFINITION)
+================================================================================
+Tarih        : 31.10.2026
+Durum        : Teslim
+================================================================================
+
+1. PROJE ADI
+--------------------------------------------------------------------------------
+Öğrenci Not Takip Sistemi
+(İngilizce: Student Grade Tracking System)
+Kısa ad: ONTS
+
+2. KONU (SUBJECT)
+--------------------------------------------------------------------------------
+Yükseköğretimde öğrenci, ders ve sınav notlarının tek bir yerden yönetilmesi;
+ağırlıklı ortalamaya göre harf notu ve genel not ortalamasının (GNO) otomatik
+hesaplanması ve sonuçların PDF/CSV rapor olarak dışa aktarılması.
+
+Proje kapsamında masaüstünde çalışan, sunucu gerektirmeyen, SQLite tabanlı bir
+yazılım prototipi geliştirilmiştir.
+
+3. PROJENİN AMACI (PROJECT AIM)
+--------------------------------------------------------------------------------
+Amaç, öğretim görevlisinin:
+  - Öğrenci ve ders kayıtlarını hızlı ve hatasız yönetmesini,
+  - Farklı sınav türlerini (Vize, Final, Ödev, Proje) ağırlıklarıyla birlikte
+    kaydetmesini,
+  - Ders bazlı ağırlıklı ortalama, harf notu, geçme durumu ve GNO'yu otomatik
+    hesaplamasını,
+  - Öğrenci karnesini ve sınıf özetini PDF/CSV olarak paylaşmasını
+sağlamaktır.
+
+Hedeflenen somut kazanımlar:
+  - Manuel hesap ve Excel tabanlı takipten kaynaklanan hataların azaltılması
+  - Not hesaplama kurallarının tek bir yerde standartlaştırılması
+  - Rapor üretim süresinin saniyeler seviyesine inmesi
+  - Küçük ölçekli de olsa test edilebilir, sürdürülebilir bir yazılım mimarisi
+    ve düzenli test/kalite kayıtları
+
+4. PROJE KAPSAMI
+--------------------------------------------------------------------------------
+Kapsam içi:
+  - Rol seçimli giriş ekranı, öğretmen paneli ve öğrenci portalı
+  - Öğretmen ana sayfası, not dökümü ve mesaj ekranları
+  - Öğrenci ana sayfası, not ortalaması, ofis saatleri ve mesaj ekranları
+  - Öğrenci CRUD işlemleri ve arama
+  - Ders CRUD işlemleri ve arama
+  - Not CRUD işlemleri, sınav türü ve ağırlık yönetimi
+  - Ağırlıklı ortalama, harf notu, GNO ve geçme durumu hesabı
+  - Öğrenci karnesi ve sınıf özeti (ekran önizlemesi)
+  - PDF ve CSV çıktısı
+  - SQLite veritabanı ve yedekleme
+  - Demo veri yükleme
+  - Birim testleri, statik analiz ve CI yapılandırması
+
+Kapsam dışı:
+  - Çok kullanıcılı / istemci-sunucu mimarisi
+  - Öğrenci veya veli için web portalı
+  - Devamsızlık, ders programı ve transkript yönetimi
+  - Ödeme, kimlik doğrulama ve yetkilendirme
+  - Bulut senkronizasyonu
+
+5. HEDEF KULLANICILAR
+--------------------------------------------------------------------------------
+Birincil kullanıcı : Öğretim görevlisi / ders sorumlusu
+İkincil kullanıcı  : Öğrenci (kendi ders, not ve ortalama bilgilerini görüntüler)
+Dolaylı kullanıcı  : Bölüm sekreteri veya not işlerinden sorumlu idari personel
+
+6. PROJE EKİBİ
+--------------------------------------------------------------------------------
+Abbas Jabbarli
+Salem Abdssalam S Shwaya
+Mostafa Ayman Atta Khalil Hussein
+Ders              : Yazılım Mühendisliği / Proje 1
+
+7. PROJE İKONU
+--------------------------------------------------------------------------------
+Dosya            : assets/app_icon.png  (ayrıca assets/app_icon.ico)
+Tasarım          : Mavi degrade zemin üzerinde beyaz mezuniyet kepi, sarı püskül
+                   ve kep gövdesinde onay işareti.
+Anlam            : Eğitim + doğrulanmış not kaydı.
+Kullanım         : Uygulama penceresi ikonu, doküman kapakları ve README.
+
+8. KULLANILAN ARAÇLAR (TOOLS)
+--------------------------------------------------------------------------------
+Katman / İhtiyaç        Araç / Teknoloji            Sürüm / Not
+--------------------------------------------------------------------------------
+Dil                     Python                      3.10+ (geliştirme: 3.15.1)
+Arayüz                  Tkinter / ttk               Python standart kütüphanesi
+Veritabanı              SQLite                      Python sqlite3 modülü
+PDF çıktı               fpdf2                       2.8+
+CSV çıktı               Python csv modülü           Standart kütüphane
+Test                    pytest                      9.2.0
+Kapsam ölçümü           pytest-cov / coverage       7.17.0
+Kod kalitesi            flake8                      7.5.0
+Statik analiz           pylint                      4.1.3
+Sürüm kontrolü          Git + GitHub                (yerelde Git kurulumu gerekli)
+CI                      GitHub Actions              .github/workflows/ci.yml
+Diyagramlar             Mermaid + mermaid.ink        docs/mermaid/*.mmd
+Dokümantasyon           Markdown -> HTML -> PDF     Edge/Chrome headless
+Editör                  VS Code / PyCharm           Serbest
+İşletim sistemi         Windows 10/11               (Linux/macOS'ta da çalışır)
+
+9. TESLİM EDİLECEK ÜRÜNLER
+--------------------------------------------------------------------------------
+  - Çalışan prototip kaynak kodu (app/, main.py)
+  - Test betikleri (tests/) ve test yapılandırmaları
+  - Coding Standards dokümanı
+  - Project Definition (bu dosya)
+  - Requirement Specification Document
+  - Design Document
+  - Test Results Document
+  - Diyagramlar (docs/diagrams.md, docs/mermaid/)
+  - Kalite metrikleri (docs/kalite.md)
+
+10. BAŞARI KRİTERLERİ
+--------------------------------------------------------------------------------
+  - Tüm zorunlu (Must) fonksiyonel gereksinimlerin çalışması
+  - En az 100 otomatik testin geçmesi
+  - İş katmanında en az %90 satır kapsamı (ölçülen: %97)
+  - flake8'de sıfır uyarı, pylint puanının >= 9.0 olması (ölçülen: 10.00)
+  - PDF/CSV çıktılarının Türkçe karakterlerle doğru üretilmesi
+  - Uygulamanın boş ve dolu veritabanıyla çökmeden açılması
+
+11. ÇALIŞTIRMA
+--------------------------------------------------------------------------------
+  python -m pip install -r requirements.txt
+  python main.py --demo
+
+Testler:
+  python -m pytest -q
+  python -m flake8 app tests main.py
+  python -m pylint app main.py
+================================================================================

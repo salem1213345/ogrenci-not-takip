@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    actor H as Kullanıcı
+    participant UI as GradesTab
+    participant S as GradeService
+    participant V as validators
+    participant DB as SQLite
+
+    H->>UI: Öğrenci, ders, sınav türü, puan ve ağırlık girer
+    UI->>S: add(student_id, course_id, exam_type, score, weight, date)
+    S->>S: Öğrenci ve ders var mı?
+    S->>V: parse_decimal / parse_date
+    V-->>S: Doğrulanmış değerler
+    alt Aynı sınav türü zaten var
+        S-->>UI: ValidationError
+        UI-->>H: Hata mesajı gösterilir
+    else Kayıt uygun
+        S->>DB: INSERT INTO grades
+        DB-->>S: grade_id
+        S-->>UI: Grade nesnesi
+        UI->>UI: Notları ve özeti yenile
+        UI-->>H: "Not eklendi" + güncel GNO
+    end

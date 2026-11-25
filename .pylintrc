@@ -1,0 +1,25 @@
+[MAIN]
+jobs = 1
+
+[MESSAGES CONTROL]
+disable =
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    duplicate-code,
+    fixme
+
+[FORMAT]
+max-line-length = 100
+indent-string = "    "
+
+[DESIGN]
+max-args = 8
+max-attributes = 35
+max-locals = 20
+max-parents = 10
+max-positional-arguments = 8
+
+[REPORTS]
+score = yes

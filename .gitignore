@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Test / kalite çıktıları
+.pytest_cache/
+.coverage
+htmlcov/
+.flake8_cache/
+
+# Uygulama verileri (yerel)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+cikti/
+
+# Editör / işletim sistemi
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
