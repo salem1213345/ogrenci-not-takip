@@ -203,7 +203,7 @@ class ReportsTab(ttk.Frame):
         folder.mkdir(parents=True, exist_ok=True)
         try:
             if sys.platform.startswith("win"):
-                os.startfile(str(folder))
+                os.startfile(str(folder))  # pylint: disable=no-member  # yalnızca Windows
             elif sys.platform == "darwin":
                 subprocess.Popen(["open", str(folder)])  # pylint: disable=consider-using-with
             else:
